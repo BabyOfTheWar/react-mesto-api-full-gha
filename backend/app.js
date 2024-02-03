@@ -36,7 +36,6 @@ app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());
 
-
 app.get('/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
@@ -99,7 +98,5 @@ app.use(errorLogger);
 app.use(errors());
 
 app.use(errorHandler);
-
-
 
 app.listen(PORT);
