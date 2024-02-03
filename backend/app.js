@@ -23,8 +23,16 @@ app.use(requestLogger);
 
 const apiRouter = express.Router();
 
+app.get('/api/crash-test', () => {
+  console.log('щашли в краш');
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
+
 app.post(
-  '/signin',
+  '/api/signin',
   celebrate({
     body: Joi.object().keys({
       email: Joi.string().required().email(),
@@ -35,7 +43,7 @@ app.post(
 );
 
 app.post(
-  '/signup',
+  '/api/signup',
   celebrate({
     body: Joi.object().keys({
       email: Joi.string().email().required(),

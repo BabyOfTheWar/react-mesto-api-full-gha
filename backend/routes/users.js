@@ -14,13 +14,12 @@ const authMiddleware = require('../middlewares/auth');
 
 const router = express.Router();
 
-// Обновленные маршруты с /api
 
-router.get('/users', authMiddleware, getUsers);
+router.get('/api/users', authMiddleware, getUsers);
 
-router.get('/users/me', authMiddleware, getUserMe);
+router.get('/api/users/me', authMiddleware, getUserMe);
 
-router.get('/users/:userId', authMiddleware, celebrate({
+router.get('/api/users/:userId', authMiddleware, celebrate({
   params: Joi.object()
     .keys({
       userId: Joi.string()
@@ -30,7 +29,7 @@ router.get('/users/:userId', authMiddleware, celebrate({
     }),
 }), getUserById);
 
-router.patch('/users/me', authMiddleware, celebrate({
+router.patch('/api/users/me', authMiddleware, celebrate({
   body: Joi.object()
     .keys({
       name: Joi.string()
@@ -42,7 +41,7 @@ router.patch('/users/me', authMiddleware, celebrate({
     }),
 }), updateProfile);
 
-router.patch('/users/me/avatar', authMiddleware, celebrate({
+router.patch('/api/users/me/avatar', authMiddleware, celebrate({
   body: Joi.object()
     .keys({
       avatar: Joi.string()
