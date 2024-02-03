@@ -86,11 +86,6 @@ app.use('/', usersRouter);
 
 app.use('/', cardsRouter);
 
-app.use(errorLogger);
-
-app.use(errors());
-
-app.use(errorHandler);
 
 app.use('*', (req, res, next) => {
   next({
@@ -98,5 +93,11 @@ app.use('*', (req, res, next) => {
     message: constants.ERROR_MESSAGES.NOT_FOUND_MESSAGE,
   });
 });
+
+app.use(errorHandler);
+
+app.use(errors());
+
+app.use(errorLogger);
 
 app.listen(PORT);
