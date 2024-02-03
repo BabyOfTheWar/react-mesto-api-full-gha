@@ -16,7 +16,7 @@ const userData = {
 };
 
 const apiConfig = {
-    url: 'https://nuclearpolygon.ru/api',
+    url: 'http://localhost:3000',
     headers:{
         'Content-Type': "application/json",
         //authorization: '537e2371-52bd-46f5-8e26-db05f09a40f9'
