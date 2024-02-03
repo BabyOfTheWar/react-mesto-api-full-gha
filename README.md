@@ -9,8 +9,8 @@
 
 ## https://github.com/BabyOfTheWar/react-mesto-api-full-gha
 
-IP-адрес 81.200.149.87
+IP 81.200.149.87
 
-Frontend https://nuclearpolygon.ru
+Frontend https://nuclearpolygon.ru/api
 
 Backend https://nuclearpolygon.ru/api
