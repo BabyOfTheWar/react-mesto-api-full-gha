@@ -1,0 +1,7 @@
+.popup__container-image_fsimage {
+    max-width: 75vw;
+    max-height: 75vh;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}

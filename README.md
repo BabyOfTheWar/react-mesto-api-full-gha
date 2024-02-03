@@ -7,10 +7,10 @@
 
 Адрес репозитория: https://github.com/...
 
-## Ссылки на проект
+## https://github.com/BabyOfTheWar/react-mesto-api-full-gha
 
-IP-адрес x.x.x.x
+IP-адрес 81.200.149.87
 
-Frontend https://...
+Frontend https://nuclearpolygon.ru/
 
-Backend https://...
+Backend https://nuclearpolygon.ru/api

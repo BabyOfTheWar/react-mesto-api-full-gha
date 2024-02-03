@@ -1,0 +1,15 @@
+.element__footer-button {
+    background-color: white;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    height: 19px;
+    width: 22px;
+    cursor: pointer;
+    background-image: url("../../../img/elements/heart.svg");
+}
+
+.element__footer-button:hover {
+    transition: opacity 0.2s;
+    opacity: 50%;
+}

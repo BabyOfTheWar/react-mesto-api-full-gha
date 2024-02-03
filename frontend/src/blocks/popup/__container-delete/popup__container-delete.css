@@ -1,0 +1,14 @@
+.popup__container-delete {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    align-self: center;
+    z-index: 111;
+    height: 185px;
+    margin: 0;
+}

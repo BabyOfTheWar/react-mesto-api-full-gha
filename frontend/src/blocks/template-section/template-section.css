@@ -1,0 +1,27 @@
+.template-section {
+    margin: 50px 0 0 0;
+    max-width: 880px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 20px;
+    column-gap: 17px;
+}
+
+@media (max-width: 980px) {
+    .template-section {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        max-width: 581px;
+    }
+}
+
+@media (max-width: 768px) {
+    .template-section {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        max-width: 282px;
+        margin-top: 36px;
+    }
+}

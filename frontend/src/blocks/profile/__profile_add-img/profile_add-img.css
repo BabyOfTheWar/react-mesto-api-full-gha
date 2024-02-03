@@ -1,0 +1,10 @@
+.profile__add-img {
+    margin: auto;
+}
+
+@media (max-width: 980px) {
+    .profile__add-img {
+        width: 16px;
+        height: 16px;
+    }
+}

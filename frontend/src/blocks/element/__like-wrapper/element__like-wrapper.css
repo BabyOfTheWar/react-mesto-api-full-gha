@@ -1,0 +1,8 @@
+.element__like-wrapper {
+    display: flex;
+    width: 22px;
+    height: 35px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}

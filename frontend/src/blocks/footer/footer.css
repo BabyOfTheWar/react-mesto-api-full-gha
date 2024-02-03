@@ -1,0 +1,20 @@
+.footer {
+    display: block;
+    max-width: 880px;
+    width: 100%;
+    margin: 66px auto 60px auto;
+}
+
+@media (max-width: 980px) {
+    .footer{
+        max-height: 56px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer{
+        margin: 48px 19px 36px 19px;
+        max-width: 282px;
+    }
+}
+
