@@ -29,7 +29,7 @@ const errorHandler = (err, req, res, next) => {
     return res.status(constants.HTTP_STATUS.NOT_FOUND).json({ message: 'Некорректная длина поля name' });
   }
 
-  return next();
+  return next(err);
 };
 
 module.exports = errorHandler;

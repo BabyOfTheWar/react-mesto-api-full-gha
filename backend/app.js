@@ -21,8 +21,6 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(requestLogger);
 
-const apiRouter = express.Router();
-
 app.get('/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
@@ -64,14 +62,12 @@ const cardsRouter = require('./routes/cards');
 
 app.use('/', cardsRouter);
 
-app.use('/api', apiRouter);
-
-app.use('*', (req, res) => res.status(404).json({ message: 'Такой страницы нет' }));
-
 app.use(errorLogger);
 
 app.use(errors());
 
 app.use(errorHandler);
+
+app.use('*', (req, res) => res.status(404).json({ message: 'Такой страницы нет' }));
 
 app.listen(PORT);

@@ -11,6 +11,6 @@
 
 IP 81.200.149.87
 
-Frontend https://nuclearpolygon.ru/api
+Frontend https://nuclearpolygon.ru
 
-Backend https://nuclearpolygon.ru/api
+Backend https://api.nuclearpolygon.ru
