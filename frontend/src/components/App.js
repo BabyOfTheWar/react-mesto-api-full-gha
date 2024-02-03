@@ -254,7 +254,7 @@ function App() {
                 <Header
                     onSignOut={onSignOut}
                     loggedIn={loggedIn}
-                    userEmail={userEmail}
+                    userEmail={currentUser && currentUser.email ? currentUser.email : userEmail}
                 />
                 <CurrentUserContext.Provider value={currentUser}>
                     <Routes>
