@@ -10,13 +10,6 @@ const authMiddleware = require('./middlewares/auth');
 const errorHandler = require('./middlewares/err-handler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const allowedCors = [
-  'https://praktikum.tk',
-  'http://praktikum.tk',
-  'localhost:3000',
-  'localhost:3001'
-];
-
 const { PORT = 3000 } = process.env;
 const app = express();
 
@@ -31,7 +24,7 @@ app.use(requestLogger);
 const apiRouter = express.Router();
 
 app.post(
-  '/api/signin',
+  '/signin',
   celebrate({
     body: Joi.object().keys({
       email: Joi.string().required().email(),
@@ -42,7 +35,7 @@ app.post(
 );
 
 app.post(
-  '/api/signup',
+  '/signup',
   celebrate({
     body: Joi.object().keys({
       email: Joi.string().email().required(),

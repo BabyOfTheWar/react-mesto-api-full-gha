@@ -35,6 +35,17 @@ function App() {
     const [userEmail, setUserEmail] = useState("");
     const navigate = useNavigate();
 
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        const loggedInStatus = localStorage.getItem("loggedIn");
+
+        if (token && loggedInStatus) {
+            setToken(token);
+            setLoggedIn(true);
+            navigate("/");
+        }
+    }, [navigate]);
+
     const isOpen = isEditAvatarPopupOpen || isEditProfilePopupOpen || isAddPlacePopupOpen || selectedCard
 
     const handleCardClick = (card) => {
@@ -102,6 +113,7 @@ function App() {
                 setToken(response.token);
                 setLoggedIn(true);
                 setUserEmail(email);
+                localStorage.setItem("token", response.token)
                 localStorage.setItem("loggedIn", true);
                 navigate("/");
             }
@@ -181,24 +193,22 @@ function App() {
     }
 
     useEffect(() => {
-        api.getUserInfoApi(getToken())
-            .then((currentUserData) => {
-                setCurrentUser(currentUserData);
-            })
-            .catch(error => {
-                console.error('Ошибка при получении данных с сервера:', error);
-            });
-    }, []);
+        if (loggedIn) {
+            api.getUserInfoApi(getToken())
+                .then((currentUserData) => {
+                    setCurrentUser(currentUserData);
+                })
+                .catch(error => {
+                    console.error('Ошибка при получении данных с сервера:', error);
+                });
+            api.getInitialCards(getToken())
+                .then((cardData) => {
+                    setCards(cardData);
+                })
+                .catch(console.error);
+        }
+    }, [loggedIn]);
 
-    useEffect(() => {
-        api.getInitialCards(getToken())
-            .then((cardData) => {
-                setCards(cardData);
-            })
-            .catch(console.error);
-
-
-    }, []);
 
     useEffect(() => {
         function closeByEscape(evt) {
