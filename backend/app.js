@@ -80,12 +80,9 @@ app.post(
   createUser,
 );
 
-app.use(authMiddleware);
-
 app.use('/', usersRouter);
 
 app.use('/', cardsRouter);
-
 
 app.use('*', (req, res, next) => {
   next({
@@ -93,6 +90,8 @@ app.use('*', (req, res, next) => {
     message: constants.ERROR_MESSAGES.NOT_FOUND_MESSAGE,
   });
 });
+
+app.use(authMiddleware);
 
 app.use(errorHandler);
 
